@@ -1,14 +1,4 @@
-````markdown
-# 🧩 Maze Solver using Deep Q-Network (DQN)
-
-<p align="center">
-
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red.svg)
-![Pygame](https://img.shields.io/badge/Pygame-Visualization-green.svg)
-![License](https://img.shields.io/badge/License-Educational-orange.svg)
-
-</p>
+# Maze Solver using Deep Q-Network (DQN)
 
 A reinforcement learning project that trains an autonomous agent to solve a maze using a **Deep Q-Network (DQN)** implemented **from scratch** with **PyTorch** and **Pygame**.
 
@@ -16,7 +6,7 @@ Unlike supervised learning, the agent is never given the correct path. Instead, 
 
 ---
 
-# 📖 Project Overview
+# Project Overview
 
 This project was developed to understand the internal working principles of **Deep Reinforcement Learning**, rather than using existing RL libraries.
 
@@ -34,10 +24,10 @@ The implementation includes:
 
 ---
 
-# 🖼️ Initial Maze
+# Initial Maze
 
 <p align="center">
-<img src="initial_maze.png" width="700">
+<img src="assets/initial_maze.png" width="700">
 </p>
 
 The maze consists of four different cell types:
@@ -51,7 +41,7 @@ The maze consists of four different cell types:
 
 ---
 
-# 🎯 Reward Design
+# Reward Design
 
 | Action | Reward |
 |---------|--------|
@@ -67,7 +57,7 @@ The reward function encourages the agent to:
 
 ---
 
-# 🧠 State Representation
+# State Representation
 
 The neural network receives the agent's position as its input.
 
@@ -85,7 +75,7 @@ Before entering the neural network, the coordinates are normalized between **0**
 
 ---
 
-# 🎮 Action Space
+# Action Space
 
 The network predicts four possible actions.
 
@@ -100,7 +90,7 @@ Each output neuron represents the estimated **Q-value** for one action.
 
 ---
 
-# 🏗️ Neural Network Architecture
+# Neural Network Architecture
 
 ```
 Input (2)
@@ -144,7 +134,7 @@ Network Outputs
 
 ---
 
-# 🔄 Deep Q-Learning Workflow
+# Deep Q-Learning Workflow
 
 During training the agent repeatedly performs the following cycle:
 
@@ -193,7 +183,7 @@ Update Network
 
 ---
 
-# 📦 Experience Replay
+# Experience Replay
 
 Every interaction with the environment is stored as:
 
@@ -213,7 +203,7 @@ This greatly improves learning stability by breaking the correlation between con
 
 ---
 
-# 📐 Bellman Equation
+# Bellman Equation
 
 The target Q-value is calculated using
 
@@ -237,7 +227,7 @@ This target is compared with the network prediction using **Mean Squared Error (
 
 ---
 
-# 🎲 Exploration vs Exploitation
+# Exploration vs Exploitation
 
 The project uses an **ε-Greedy Policy**.
 
@@ -265,7 +255,7 @@ The agent gradually shifts from exploration to exploitation as learning progress
 
 ---
 
-# 📊 Training Configuration
+# Training Configuration
 
 | Parameter           | Value |
 | ------------------- | ----: |
@@ -279,12 +269,12 @@ The agent gradually shifts from exploration to exploitation as learning progress
 
 ---
 
-# 📈 Training Progress
+# Training Progress
 
 The following screenshot shows the training progress together with the successful completion of training.
 
 <p align="center">
-<img src="train&dqn_solve.png" width="900">
+<img src="assets/train&dqn_solve.png" width="900">
 </p>
 
 Example output:
@@ -299,19 +289,29 @@ Training Finished!
 
 ---
 
-# 🤖 Trained Agent
+# Trained Agent
 
 After training, press **D** to load the saved neural network and allow the agent to solve the maze autonomously.
 
 <p align="center">
-<img src="agent_dqn_solve.png" width="700">
+<img src="assets/agent_dqn_solve.png" width="700">
 </p>
 
 The trained agent successfully reaches the goal by following the learned policy.
 
 ---
 
-# ⌨️ Keyboard Controls
+# Episode vs Reward
+
+The screenshot shows how the reward is improved gradually over the episodes.
+
+<p align="center">
+<img src="assets/episodeVSreward.png" width="700">
+</p>
+
+---
+
+# Keyboard Controls
 
 | Key     | Function                     |
 | ------- | ---------------------------- |
@@ -323,61 +323,37 @@ The trained agent successfully reaches the goal by following the learned policy.
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```
 Maze-DQN/
 │
 ├── src/
-│   ├── agent.py
-│   ├── dqn.py
-│   ├── dqn_agent.py
-│   ├── environment.py
-│   ├── main.py
-│   ├── maze.py
-│   ├── replay_buffer.py
-│   ├── train.py
-│   └── maze_dqn.pth
-│
-├── initial_maze.png
-├── train&dqn_solve.png
-├── agent_dqn_solve.png
-├── requirements.txt
-└── README.md
+   ├── agent.py
+   ├── dqn.py
+   ├── dqn_agent.py
+   ├── environment.py
+   ├── main.py
+   ├── maze.py
+   ├── replay_buffer.py
+   ├── train.py
+   └── maze_dqn.pth
+
 ```
 
 ---
 
-# 🚀 Running the Project
+# Running the Project
 
-Clone the repository
-
-```bash
-git clone https://github.com/your_username/Maze-DQN.git
-```
-
-Go to the project directory
-
-```bash
-cd Maze-DQN
-```
+Set the repository like the above project structure
 
 Install dependencies
 
-```bash
-pip install -r requirements.txt
-```
-
-Run
-
-```bash
-cd src
-python main.py
-```
+Run the main.py file
 
 ---
 
-# 📚 Concepts Learned
+# Concepts Learned
 
 This project helped build a practical understanding of:
 
@@ -400,7 +376,7 @@ This project helped build a practical understanding of:
 
 ---
 
-# 🔮 Future Improvements
+# Future Improvements
 
 Possible future extensions include:
 
@@ -418,7 +394,7 @@ Possible future extensions include:
 
 ---
 
-# 🛠️ Technologies Used
+# Technologies Used
 
 * Python
 * PyTorch
@@ -426,13 +402,13 @@ Possible future extensions include:
 
 ---
 
-# 📄 License
+# License
 
 This repository is intended for **educational and research purposes**.
 
 ---
 
-## ⭐ Acknowledgement
+## Acknowledgement
 
 This project was implemented from scratch as part of a hands-on journey to understand **Deep Reinforcement Learning** by building every major component manually, including the environment, replay buffer, Deep Q-Network, training loop, and inference process.
 
